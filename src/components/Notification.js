@@ -5,6 +5,8 @@ import { PermissionsAndroid } from 'react-native';
 import Geolocation from 'react-native-geolocation-service';
 import axios from 'axios'; // Import axios
 
+import {API_KEY} from '@env';
+
 export default function Notification() {
   const [location, setLocation] = useState(null);
   const [latitude, setLatitude] = useState(null);
@@ -67,7 +69,7 @@ export default function Notification() {
     try {
       const response = await axios.get(`https://api.weatherapi.com/v1/forecast.json`, { // Add API URL
         params: {
-          key: 'c77ef9b9b83c4b27b40165218242109',
+          key: API_KEY,
           q: `${latitude},${longitude}`,
           alert: "yes",
         },

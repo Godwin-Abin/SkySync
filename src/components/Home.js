@@ -5,6 +5,8 @@ import Geolocation from 'react-native-geolocation-service';
 import { PermissionsAndroid } from 'react-native';
 import axios from 'axios';
 
+import {API_KEY} from '@env';
+
 export default function Home() {
   const [hasLocationPermission, setHasLocationPermission] = useState(false);
   const [location, setLocation] = useState(null);
@@ -102,7 +104,7 @@ export default function Home() {
       try {
         const response = await axios.get(`${api}forecast.json`, {
           params: {
-            key: 'c77ef9b9b83c4b27b40165218242109',
+            key: API_KEY,
             q: `${latitude},${longitude}`,
             aqi:"yes",
             days: "7"

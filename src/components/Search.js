@@ -4,6 +4,8 @@ import axios from 'axios'; // Import axios
 import LinearGradient from 'react-native-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import {API_KEY} from '@env';
+
 export default function Search() {
   const [weatherData, setWeatherData] = useState(null);
   let api = 'https://api.weatherapi.com/v1/';
@@ -14,7 +16,7 @@ export default function Search() {
     try {
       const response = await axios.get(`${api}forecast.json`, {
         params: {
-          key: 'c77ef9b9b83c4b27b40165218242109',
+          key: API_KEY,
           q: `${inputText}`,
           aqi:"yes",
           days: "7"
