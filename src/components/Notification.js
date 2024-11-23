@@ -103,14 +103,14 @@ export default function Notification() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
   dataContainer:{
-    padding: 10, 
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#fff',
+    borderRadius: 10,
+    minWidth: '92%',
   },
   header:{
     fontSize: 30,
